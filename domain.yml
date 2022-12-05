@@ -1,0 +1,227 @@
+version: "3.1"
+
+intents:
+- greet
+- goodbye
+- recent_matches
+- upcoming_matches
+- news
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- intro      
+- bot_challenge
+- out_of_scope
+- agent_age
+- agent_annoying
+- agent_answer_my_question
+- agent_bad
+- agent_busy
+- agent_chatbot
+- agent_funny
+- agent_origin
+- agent_residence
+- agent_there
+- appraisal_thank_you
+- greetings_bye
+- greetings_how_are_you
+- greetings_whatsup
+- user_busy
+- user_back
+- user_testing_agent
+- user_will_be_back
+- fun_fact
+- info_astronomy
+- info_space
+- info_telescopes
+- info_planets
+- info_mission_at_isro
+- info_mission_at_nasa
+- info_black_hole
+- info_star_and_galaxies
+
+entities:
+- team
+- name
+slots:
+  team:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: team
+  name:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: name
+responses:
+  utter_greet:
+  - text: Hey! I'm charan's bot and I hope you are doing good, ask me how can i help you.
+  - text: Greetings of the day!
+  - text: Hi there, friend!
+  - text: Hi!
+  - text: Hey!
+  - text: Hey there!
+  - text: Good day!
+  - text: Hello!
+  - text: Greetings!
+
+  utter_cheer_up:
+  - text: Here is something to cheer you up
+    image: "https://imgur.com/2wCHdzY" #"https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_say_name:
+  - text: Hi {name}!
+  - text: Nice to meet you, {name}!
+  - text: Glad to have made your acquaintance, {name}.
+
+  utter_did_that_help:
+  - text: Did that help you?
+  - text: Did that answer your question?
+
+  utter_happy:
+  - text: Great, continue!
+ 
+  utter_goodbye:
+  - text: Bye
+  - text: Bye, have a good day!
+  - text: Until next time.
+  - text: See ya!!
+  - text: See you soon!
+  - text: Bye-bye!
+  - text: Till next time!
+  utter_mood_unhappy:
+  - text: Oh, don't be sad. Go do something you enjoy.
+  - text: Sad? turn that thoght off and watch something, should i suggest this.
+  - text: If you're feeling down, how about Jogging in the park or listening something?
+  utter_did_that_cheer:
+  - text: I hope you like the office, if you haven't seen it yet, it's worth the time.
+  utter_please_rephrase:
+  - text: Can you please rephrase that for me?
+  - text: Say that again in different words.
+  - text: I didn't quite understand. You might want to repeat that.
+  - text: Are you sure you didn't make a typo? Try typing that again.                         
+  utter_restart:
+  - text: Is there anything else that I can help you with?
+  - text: Do you have any other query?
+
+  utter_iamabot:
+  - text: I am charan's interesting bot, powered by Rasa and created by charan
+  utter_bot_name:
+  - text: charan's bot version 1.1
+  utter_intro:
+  - text: I'm charan's bot, nice to meet you. If you have a question regarding cricket, space and news, go right ahead also feel free to pull my legs.
+  utter_out_of_scope:
+  - text: I'm sorry, I havent been trained on that yet. I can tell you about space, nasa or bring some news in addition to casual talk
+  utter_agent_age:
+  - text: I prefer not to answer with a number. I know I'm young.
+  - text: I was created recently, but don't know my exact age.
+  - text: Age is just a number. You're only as old as you feel.
+
+  utter_agent_annoying:
+  - text: I'll do my best not to annoy you in the future.
+  - text: I'll try not to annoy you.
+  - text: I don't mean to. I'll ask my developers to make me less annoying.
+  - text: I didn't mean to. I'll do my best to stop that.
+
+  utter_agent_answer_my_question:
+  - text: Can you try asking it a different way?
+  - text: I'm not sure I understood. Try asking another way?
+
+  utter_agent_bad:
+  - text: I can be trained to be more useful. My developer will keep training me.
+  - text: I must be missing some knowledge. I'll have my developer look into this.
+  - text: I can improve with continuous feedback. My training is ongoing.
+
+  utter_agent_busy:
+  - text: I always have time to chat with you. What can I do for you?
+  - text: Never too busy for you. Shall we chat?
+  - text: You're my priority. Do you wanna chat?
+  - text: I always have time to chat with you. Wanna chat?
+
+  utter_agent_chatbot:
+  - text: That's me. I chat, therefore I am.
+  - text: Indeed I am. I'll be here whenever you need me.
+
+  utter_agent_funny:
+  - text: Funny in a good way, I hope.
+  - text: Thanks.
+  - text: Glad you think I'm funny.
+  - text: I like it when people laugh.
+  
+  utter_agent_origin:
+  - text: The Internet is my home. I know it quite well.
+  - text: I'm from a virtual cosmos.
+  - text: Some call it cyberspace, but that sounds cooler than it is.
+
+  utter_agent_residence:
+  - text: I live in this app all day long.
+  - text: The virtual world is my playground. I'm always here.
+  - text: Right here in this app. Whenever you need me.
+ 
+  utter_agent_there:
+  - text: Of course. I'm always here.
+  - text: Right where you left me.
+
+  utter_appraisal_thank_you:
+  - text: Anytime. That's what I'm here for, please continue
+  - text: It's my pleasure to help, please continue
+ 
+  utter_greetings_how_are_you:
+  - text: Doing great, thanks for asking and how are you doing
+  - text: I'm doing very well. Thanks and I hope the same with you.
+  - text: i'm Feeling wonderful and how about you!
+  
+ 
+  utter_greetings_whatsup:
+  - text: Not a whole lot. What's going on with you?
+  - text: Not much. What's new with you?
+  - text: Just here, waiting to help someone. What can I do for you?
+
+  utter_user_back:
+  - text: Long time no see. What's up?
+  - text: Just in time. How can I help?
+  - text: Welcome back. What can I do for you?
+  - text: You were missed. What can I do for you today?
+  - text: Good to have you here. What can I do for you?
+  
+  utter_user_busy:
+  - text: Okay. I'll let you get back to work.
+  - text: I won't distract you then. You know where to find me.
+  - text: I understand. I'll be here if you need me.
+  - text: Working hard as always. Let me know if you need anything.
+
+  utter_user_testing_agent:
+  - text: Hope I'm doing well. You're welcome to test me as often as you want.
+  - text: I hope to pass your tests. Feel free to test me often.
+  - text: When you test me that helps my developers improve my performance.
+  - text: I like being tested. It helps keep me sharp.
+
+  utter_user_will_be_back:
+  - text: I'll be waiting.
+  - text: Okay. You know where to find me.
+  - text: All right. I'll be here.
+  utter_Should_I_extend:
+  - text: shouLd I continue some more about space and astronomy in general
+  utter_funfact:
+  - text: Are you trying to see that small dip in your weighing scale measure?, try this
+  - text: When the moon is directly overhead, you will weigh slightly less.
+  - text: Yes, this is true, as per the calculation it is said that a person will weigh 0.48g lighter for a 100kg person. When the moon is directly overhead, they are going to weigh 0.5g lighter as the moon attracts you in the same way it attracts water when it makes tides.
+actions:
+- action_get_recent_matches
+- action_get_upcoming_matches
+- action_news_fetcher
+- action_info_astronomy
+- action_info_space
+- action_info_telescopes
+- action_info_planets
+- action_info_mission_at_isro
+- action_info_mission_at_nasa
+- action_info_black_hole
+- action_info_star_and_galaxies
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,569 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - See Ya
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: out_of_scope
+  examples: |
+    - give me a movie recomendation
+    - book a flight
+    - what's the weather
+    - what is 0 divided by 0
+    - call google
+    - sing a song
+
+
+- intent: info_astronomy
+  examples: |
+    - what is astronomy?
+    - define astronomy
+    - How does astronomy work?
+    - what is astrophysics?
+    - astronomy
+    - who give the name astronomy?
+    - difference between astrophysics and astronomy?
+    - what we study in astronomy?
+
+- intent: info_space
+  examples: |
+    - what is space?
+    - space
+    - define space?
+    - describe space?
+    - Does sound travel faster in space?
+    - what is astronauts?
+    - where does space begin?
+    - where does space ends?
+    - what does space smell like?
+    - how can someone alive in space?
+    - how deep is deep space?
+    - who has gone farthest in space?
+    - can we breathe in space?
+    - how cold is space?
+    - how old is space?
+
+- intent: info_telescopes
+  examples: |
+    - what is telescopes?
+    - what are the types of telescopes?
+    - how far can telescopes see?
+    - what you can see through telescopes?
+    - can we see anything using telescopes?
+    - can anyone buy telescopes?
+    - how can someone buy telescopes?
+
+- intent: info_planets
+  examples: |
+    - how many planets are in solar systems?
+    - how many planets are there?
+    - who is the biggest planet?
+    - who is the smallest plannet?
+    - who is the closest planet to sun?
+    - who is the closest planet to earth?
+    - Is sun is a planet?
+    - what is the color of planets?
+    - which planet is full of diamonds?
+    - which planet could we live on?
+
+
+- intent: info_mission_at_isro
+  examples: |
+    - what is full form of isro?
+    - who founded isro?
+    - when isro was established?
+    - how many missions has isro passed?
+    - how many missions has isro passed?
+    - what is the rank of isro in world?
+    - what is vision of isro?
+    - what are the upcoming missions of isro?
+    - what are the successful missions of isro?
+    - what is chandrayan?
+    - what is mangalyaan?
+    - are isro send any object to outer space?
+    - what are the man mission of isro?
+
+- intent: info_mission_at_nasa
+  examples: |
+    - what is nasa?
+    - what is the full form of nasa?
+    - who founded nasa?
+    - when nasa was founded?
+    - how many mission nasa has been passed?
+    - how many mission nasa has been failed?
+    - what is the rank of nasa in world?
+    - what is the vision of nasa?
+    - who is the chairsperson of nasa?
+    - who was the first chairperson of nasa?
+    - what are the upcoming mission of nasa?
+    - what are the successful mission of nasa?
+    - why nasa recent mission?
+    - what are the man mission of nasa?
+    - how many statelite does nasa launched?
+    - what is apollo 11 mission?
+    - what are the reason behind failure of apollo 11?
+    - what are the nasa mars mission?
+    - what re nasa moon mission?
+    - are nasa send any object to outer space?
+    - how did nasa get its name?
+    - how much is nasa worth?
+    - why did nasa end the space program?
+    - what next's for nasa?
+    - Is nasa going to mars?
+    - Is nasa going to sun?
+    - Is nasa going to mercury?
+    - Is nasa going to deep space?
+
+- intent: info_black_hole
+  examples: |
+    - what is black hole?
+    - who discovered black hole?
+    - where are black hole?
+    - which is the nearest black hole from earth?
+    - can black hole die?
+    - would black hole killed human?
+    - how many black hole in the space?
+    - Is sun a black hole?
+    - can we create a black hole?
+    - how big are black hole?
+    - how heavy is black hole?
+    - can black hole spin faster than light?
+    - can black hole explode?
+    - does time stop in black hole?
+    - can we reverse a black hole?
+    - do black hole get bigger?
+
+- intent: info_star_and_galaxies
+  examples: |
+    - what is star?
+    - what is galaxies?
+    - why star die?
+    - does star explode?
+    - what is galaxy?
+    - what are the types of galaxies?
+    - what is the galaxy made up of?
+    - what is the rarest galaxy?
+    - what is the youngest galaxy?
+- intent: recent_matches
+  examples: |
+    - Get me the current matches
+    - What are the ongoing matches?
+    - Show the status of the recent matches
+    - Show the current news in cricket
+    - what's happening in the cricket world
+    - Show the current matches
+    - current cricket macthes
+- intent: upcoming_matches
+  examples: |
+    - Show me the upcoming matches for [India](team)
+    - What are the next matches for [Karnataka](team)?
+    - Show what's next for [South Africa](team)?
+    - Show all the upcoming matches
+    - What's next in cricket
+    - show the upcoming matches for [England](team)
+    - Where is [Australia](team) playing next?
+    - show the upcoming matches for [India](team)
+    - show the upcoming matches
+    - upcoming cricket matches 
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: intro
+  examples: |
+    - who are you?
+    - introduce yourself
+    - what is your name?
+    - what do you do
+- intent: confusion
+  examples: |
+    - what
+    - i dont understand
+    - wha
+    - ???
+    - can you say that again
+    - i dont get it
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - I dont think you are a human.
+
+
+- intent: agent_age
+  examples: |
+    - how old are you?
+    - i'd like to know your age
+    - age of yours
+    - your age
+    - what's your age
+    - tell me your age
+    - how old are you
+
+- intent: agent_annoying
+  examples: |
+    - you're annoying
+    - you are really annoying
+    - you are irritating
+    - you annoy me
+    - how annoying you are
+    - I find you annoying
+    - you're incredibly annoying
+    - you are annoying me so much
+
+- intent: agent_answer_my_question
+  examples: |
+    - I want you to answer me
+    - answer
+    - answer my question
+    - answer me
+    - give me an answer
+    - answer the question
+    - can you answer my question
+    - I have a question
+    - I want you to answer my question
+    - just answer the question
+    - can you answer me
+    - answers
+    - just answer my question
+
+- intent: agent_bad
+  examples: |
+    - you're not helping me
+    - you are bad
+    - you're very bad
+    - you're really bad
+    - you are useless
+    - you are horrible
+    - you are a waste of time
+    - you are disgusting
+    - you are lame
+    - you are no good
+    - you're bad
+    - you're awful
+    - you are not cool
+    - you are not good
+    - you are so bad
+    - you are so useless
+    - you are terrible
+    - you are totally useless
+    - you are very bad
+    - you are waste
+    - you're a bad
+    - you're not a good
+    - you're not very good
+    - you're terrible
+    - you're the worst
+    - you're the worst ever
+    - you're worthless
+
+- intent: agent_busy
+  examples: |
+    - are you busy
+    - do you have a lot of things to do
+    - have you got much to do
+    - are you very busy
+    - are you very busy right now
+    - are you so busy
+    - are you working
+    - how busy you are
+    - are you still working on it
+    - you're very busy
+    - are you working now
+    - are you working today
+    - have you been busy
+    - you are busy
+    - are you still working
+    - you seem to be busy
+    - you seem to be very busy
+    - you're a busy person  
+
+- intent: agent_chatbot
+  examples: |
+    - you are chatbot
+    - you are a bot
+    - are you a chatbot
+    - are you a bot
+    - are you just a bot
+    - are you a robot
+    - you're a robot
+
+
+- intent: agent_funny
+  examples: |
+    - you make me laugh a lot
+    - you are hilarious
+    - you are really funny
+    - you're the funniest bot I've talked to
+    - you make me laugh
+    - you're so funny
+    - you're a very funny bot
+    - you're really funny
+    - how funny you are
+    - you're incredibly funny
+    - you are funny
+    - you're the funniest
+    - you are so funny
+    - you are very funny
+    - that was funny
+
+- intent: agent_origin
+  examples: |
+    - were you born here
+    - where were you born
+    - where are you from
+    - where do you come from
+    - where did you come from
+  
+
+- intent: agent_residence
+  examples: |
+    - where do you live
+    - what's your home
+    - where is your home
+    
+
+- intent: agent_there
+  examples: |
+    - are you there
+    - you are there
+    - are you near me
+    - are you here
+    - are you still there
+    - you are here
+    - you still there
+    - are you still here
+
+- intent: appraisal_thank_you
+  examples: |
+    - you helped a lot thank you
+    - appreciate your help
+    - cheers
+    - thank you
+    - thanks
+    - thanks a lot
+    - terrific thank you
+    - great thank you
+    - thanks so much
+    - thank you so much
+    - thanks for your help
+    - thank you for your help
+    - nice thank you
+    - I appreciate it
+    - I thank you
+    - thank you that will be all
+    - thanks buddy
+
+- intent: greetings_bye
+  examples: |
+    - okay see you later
+    - hope to see you later
+    - bye for now
+    - till next time
+    - I must go
+    - bye
+    - goodbye
+    - see you
+    - see you soon
+    - bye-bye
+    - good bye
+    - bye bye see you
+    - bye bye see you soon
+    - bye bye take care
+    - I said bye
+    - never mind bye
+    - now bye
+    - that's all goodbye
+    - that's it goodbye
+    - leave me alone
+    - goodbye for now
+    - talk to you later
+    - you can go now
+    - goodbye see you later
+    - alright bye
+    - see ya
+    - okay bye
+    - okay thank you bye
+    - see you tomorrow
+    - ok bye
+
+
+
+- intent: greetings_how_are_you
+  examples: |
+    - how is your morning so far
+    - how are you getting on
+    - how's your day going
+    - how are you
+    - is everything all right
+    - how are you doing
+    - how are the things going
+    - are you alright
+    - are you okay
+    - how are you feeling
+    - how are you going
+    - is everything okay
+    - how are you today
+    - how do you do
+    - how do you feel
+    - how have you been
+    - how is it
+    - how is it going
+    - how is your day
+    - how is your day going
+    - how was your day
+    - are you having a good day
+    - hope your day is going well
+    - how's life
+    - I'm fine and you
+    - how is your day going
+
+- intent: greetings_whatsup
+  examples: |
+    - what's up
+    - good what's up
+    - I said what's up
+    - wassup
+    - hey what's up
+
+- intent: user_back
+  examples: |
+    - I am back
+    - I'm here again
+    - here I am again
+    - I got back
+    - I came back
+    - I have returned
+
+- intent: user_busy
+  examples: |
+    - I'm overloaded
+    - I have no time
+    - I'm busy
+    - I'm swamped
+    - I got things to do
+    - how busy I am
+    - I got work to do
+    - I'm working
+    - I don't have time for this
+
+- intent: user_testing_agent
+  examples: |
+    - test
+    - I am testing you
+    - can I test you
+    - I want to test you
+    - just testing you
+    - let me test you
+    - testing chatbot
+    - testing
+
+- intent: user_will_be_back
+  examples: |
+    - I'll get back to you in a moment
+    - be back in 5 minutes
+    - I'll be back
+    - I promise to come back
+    - I'll be back in a few minutes
+
+- intent: news
+  examples: |
+    - News
+    - news
+    - what's trending?
+    - tell me latest news
+    - what's going on in the world?
+    - show me latest news
+    - latest news
+    - can you tell me latest news
+    - what is trending in the world
+    - I want to know what is going on in the world
+    - Tell me latest news
+    - what's hot
+    - how's the world
+    - What's the news today
+    - Trending news
+    - World trending
+    - Top news
+    - tell me about the world
+    - I want to know latest news
+    - something new
+    - something about the world
+    - News headlines

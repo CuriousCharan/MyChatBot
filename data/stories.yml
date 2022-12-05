@@ -1,0 +1,296 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_greetings_how_are_you
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_cheer
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_cheer
+  - intent: deny
+  - action: utter_goodbye
+
+- story: about_news
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: news
+  - action: action_news_fetcher
+  - action: utter_restart
+
+- story: view recent matches
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recent_matches
+  - action: action_get_recent_matches
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - action: utter_restart
+
+- story: upcoming matches - with team name
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: upcoming_matches
+    entities:
+    - team: India A
+  - slot_was_set:
+    - team: India A
+  - action: action_get_upcoming_matches
+  - slot_was_set:
+    - team: null
+  - action: utter_restart
+
+- story: upcoming matches - without team name
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: upcoming_matches
+  - action: action_get_upcoming_matches
+  - slot_was_set:
+    - team: null
+  - action: utter_restart
+
+-  story: info astronomy
+   steps:
+   - intent: info_astronomy
+   - action: action_info_astronomy
+
+
+- story:  info space
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: info_space
+  - action: action_info_space  
+  - intent: deny
+  - action: utter_restart
+
+- story:  info telescopes
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: info_telescopes
+  - action: action_info_telescopes 
+  - action: utter_Should_I_extend 
+  - intent: deny
+  - action: utter_restart
+
+- story:  info telescopes
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: info_telescopes
+  - action: action_info_telescopes 
+  - action: utter_Should_I_extend 
+  - intent: affirm
+  - action: action_info_mission_at_nasa
+  - action: utter_Should_I_extend 
+  - intent: affirm
+  - action: action_info_black_hole
+
+- story:  info telescopes
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: info_telescopes
+  - action: action_info_telescopes 
+  - action: utter_Should_I_extend 
+  - intent: affirm
+  - action: action_info_mission_at_nasa
+  - action: utter_Should_I_extend 
+  - intent: deny
+  - action: utter_goodbye
+
+
+- story:  info space
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: info_space
+  - action: action_info_space 
+  - action: utter_Should_I_extend 
+  - intent: affirm
+  - action: action_info_mission_at_nasa
+  - action: utter_Should_I_extend 
+  - intent: deny
+  - action: utter_user_busy
+  - action: utter_goodbye
+
+- story:  info planets
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: info_planets
+  - action: action_info_planets  
+  - intent: deny
+  - action: utter_restart
+
+- story:  info mission at isro
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: info_mission_at_isro
+  - action: action_info_mission_at_isro  
+  - intent: deny
+  - action: utter_restart
+ 
+- story:  info mission at nasa
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: info_mission_at_nasa
+  - action: action_info_mission_at_nasa 
+  - intent: deny
+  - action: utter_restart
+
+- story:  info black hole
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: info_black_hole
+  - action: action_info_black_hole  
+  - intent: deny
+  - action: utter_restart
+
+- story:  info star and galaxies
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: info_star_and_galaxies
+  - action: action_info_star_and_galaxies  
+  - intent: deny
+  - action: utter_restart
+
+- story: path_agent_age
+  steps:
+  - intent: agent_age
+  - action: utter_agent_age
+
+- story: path_agent_annoying
+  steps:
+  - intent: agent_annoying
+  - action: utter_agent_annoying
+
+- story: path_agent_answer_my_question
+  steps:
+  - intent: agent_answer_my_question
+  - action: utter_agent_answer_my_question
+
+- story: path_agent_bad
+  steps:
+  - intent: agent_bad
+  - action: utter_agent_bad
+  - action: utter_restart
+
+
+- story: path_agent_busy
+  steps:
+  - intent: agent_busy
+  - action: utter_agent_busy
+
+
+
+- story: path_agent_chatbot
+  steps:
+  - intent: agent_chatbot
+  - action: utter_agent_chatbot
+
+
+- story: path_agent_funny
+  steps:
+  - intent: agent_funny
+  - action: utter_agent_funny
+
+
+- story: path_agent_origin
+  steps:
+  - intent: agent_origin
+  - action: utter_agent_origin
+
+
+
+- story: path_agent_residence
+  steps:
+  - intent: agent_residence
+  - action: utter_agent_residence
+
+- story: path_agent_there
+  steps:
+  - intent: agent_there
+  - action: utter_agent_there
+
+
+- story: path_appraisal_thank_you
+  steps:
+  - intent: appraisal_thank_you
+  - action: utter_appraisal_thank_you
+
+
+
+- story: path_greetings_bye
+  steps:
+  - intent: greetings_bye
+  - action: utter_goodbye
+
+- story: path_greetings_hello
+  steps:
+  - intent: greetings_hello
+  - action: utter_greet
+  
+- story: path_greetings_how_are_you
+  steps:
+  - intent: greetings_how_are_you
+  - action: utter_greetings_how_are_you
+
+
+- story: path_greetings_whatsup
+  steps:
+  - intent: greetings_whatsup
+  - action: utter_greetings_whatsup
+  - action: utter_agent_busy
+
+
+- story: path_user_back
+  steps:
+  - intent: user_back
+  - action: utter_user_back
+
+
+- story: path_user_busy
+  steps:
+  - intent: user_busy
+  - action: utter_user_busy
+
+
+- story: path_user_testing_agent
+  steps:
+  - intent: user_testing_agent
+  - action: utter_user_testing_agent
+
+- story: path_user_will_be_back
+  steps:
+  - intent: user_will_be_back
+  - action: utter_user_will_be_back

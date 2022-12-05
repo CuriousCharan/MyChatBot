@@ -1,0 +1,41 @@
+version: "3.1"
+
+rules:
+
+#- rule: Say hi
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+
+
+
+- rule: Introduce yourself
+  steps:
+  - intent: intro
+  - action: utter_intro
+  - action: utter_greetings_how_are_you
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - action: utter_bot_name
+
+- rule: out-of-scope stuff
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+  
+- rule: appreciation thank you
+  steps:
+  - intent: appraisal_thank_you
+  - action: utter_appraisal_thank_you
+
+
+
+
