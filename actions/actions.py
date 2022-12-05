@@ -5,8 +5,9 @@
 # https://rasa.com/docs/rasa/custom-actions
 
 import requests
+import pymongo
 from rasa_sdk import Action
-from rasa_sdk.events import SlotSet
+from rasa_sdk.events import SlotSet,AllSlotsReset
 
 from typing import Any, Text, Dict, List
 import logging
@@ -15,6 +16,22 @@ from rasa_sdk.executor import CollectingDispatcher
 from newsfetch import NewsFromGoogle
 
 logger = logging.getLogger(__name__)
+
+client = pymongo.MongoClient("mongodb+srv://Charan_bot:rasabotdb@rasamybot.mmcxbs3.mongodb.net/?retryWrites=true&w=majority")
+db = client.test
+
+class ActionNewsLetter(Action):
+
+    def name(self):
+        return "action_news_letter"
+
+    def run(self, dispatcher, tracker: Tracker, domain: Dict[Text, Any],) -> List[Dict[Text, Any]]:
+        slotdict={"email":tracker.get_slot('email'),"frequency":tracker.get_slot('frequency')}
+
+        db.test.insert_one(slotdict)
+        
+        client.close()
+        return [AllSlotsReset()]
 
 class ActionInfoAstronomy(Action):
 
@@ -36,7 +53,8 @@ class ActionInfoAstronomy(Action):
             planets, moons, stars, nebulae, galaxies, and comets. Relevant phenomena include supernova explosions, gamma ray bursts, quasars, 
             blazars, pulsars, and cosmic microwave background radiation. More generally, astronomy studies everything that originates outside 
             Earth's atmosphere. Read more at https://starofmysore.com/wp-content/uploads/2020/04/astronomy-day-1.jpg.."""
-            
+                       
+
             dispatcher.utter_message(msg)
         return []
 

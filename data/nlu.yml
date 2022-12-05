@@ -75,6 +75,11 @@ nlu:
     - call google
     - sing a song
 
+- intent: froze
+  examples: |
+    - looks like you are stuck, No surprises!
+    - are you stuck?
+
 
 - intent: info_astronomy
   examples: |
@@ -567,3 +572,23 @@ nlu:
     - something new
     - something about the world
     - News headlines
+
+- intent: subscribe
+  examples: |
+    -Can you send me a newsletter?
+    -I want to subscribe for a newsletter.
+    -Is there a newsletter?
+    -newsletter subscription options
+- intent: inform_email
+  examples: |
+    - My email is [somename@somedomain.com](email)
+    - [random@gmail.com](email)
+    - [mailsforsaicharan@gmail.com](email)
+    - email address is [something@someplace.com](email)
+- intent: inform_frequency
+  examples: |
+    - [every week](frequency)
+    - [weekly](frequency)
+    - [twice per month](frequency)
+    - [monthly](frequency)
+    - [daily](frequency)

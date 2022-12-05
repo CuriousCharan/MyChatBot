@@ -294,3 +294,19 @@ stories:
   steps:
   - intent: user_will_be_back
   - action: utter_user_will_be_back
+
+- story: greet and subscribe
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: subscribe
+  - action: newsletter_form
+  - active_loop: newsletter_form
+  - active_loop: null
+  - action: utter_subscribed
+  - action: action_news_letter
+  - action: utter_posted_succesfullyto_mongodb
+  - action: utter_happy
+  - intent: greet
+  - action: utter_greet
+  

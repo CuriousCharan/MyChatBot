@@ -36,6 +36,10 @@ rules:
   - intent: appraisal_thank_you
   - action: utter_appraisal_thank_you
 
-
+- rule: restart the talk
+  steps:
+   - intent: froze
+   - action: utter_agent_bad
+   - action: utter_restart
 
 

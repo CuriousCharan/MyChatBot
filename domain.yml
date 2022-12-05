@@ -8,6 +8,7 @@ intents:
 - news
 - affirm
 - deny
+- froze
 - mood_great
 - mood_unhappy
 - intro      
@@ -40,10 +41,17 @@ intents:
 - info_mission_at_nasa
 - info_black_hole
 - info_star_and_galaxies
+- subscribe
+- inform_email
+- inform_frequency
 
 entities:
 - team
 - name
+- email
+- frequency
+
+
 slots:
   team:
     type: text
@@ -57,6 +65,30 @@ slots:
     mappings:
     - type: from_entity
       entity: name
+  email:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: email
+
+  frequency:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: frequency
+
+ 
+forms:
+  newsletter_form:
+    required_slots:
+      - email
+      - frequency
+    
+
+
+
 responses:
   utter_greet:
   - text: Hey! I'm charan's bot and I hope you are doing good, ask me how can i help you.
@@ -134,7 +166,7 @@ responses:
   utter_agent_bad:
   - text: I can be trained to be more useful. My developer will keep training me.
   - text: I must be missing some knowledge. I'll have my developer look into this.
-  - text: I can improve with continuous feedback. My training is ongoing.
+  - text: I can improve with continuous usage. My training is ongoing.
 
   utter_agent_busy:
   - text: I always have time to chat with you. What can I do for you?
@@ -205,11 +237,21 @@ responses:
   - text: Okay. You know where to find me.
   - text: All right. I'll be here.
   utter_Should_I_extend:
-  - text: shouLd I continue some more about space and astronomy in general
+  - text: should I continue some more about space and astronomy in general
   utter_funfact:
   - text: Are you trying to see that small dip in your weighing scale measure?, try this
   - text: When the moon is directly overhead, you will weigh slightly less.
   - text: Yes, this is true, as per the calculation it is said that a person will weigh 0.48g lighter for a 100kg person. When the moon is directly overhead, they are going to weigh 0.5g lighter as the moon attracts you in the same way it attracts water when it makes tides.
+
+  utter_ask_email:
+    - text: Please type in your email address.
+  utter_ask_frequency:
+    - text: How oftern do you want to receive emails regarding this.
+  utter_subscribed:
+    - text: Thank you for subscribing to the newsletter, you will receive the same at {email}, Please wait and watch for that and you will receive emails {frequency}
+  utter_posted_succesfullyto_mongodb:
+    - text: Subscription details posted to the MongoDB, please continue to explore while you wait for the newsletter.
+
 actions:
 - action_get_recent_matches
 - action_get_upcoming_matches
@@ -222,6 +264,7 @@ actions:
 - action_info_mission_at_nasa
 - action_info_black_hole
 - action_info_star_and_galaxies
+- action_news_letter
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
