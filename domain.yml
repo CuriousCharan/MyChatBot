@@ -11,8 +11,8 @@ intents:
 - froze
 - mood_great
 - mood_unhappy
-- intro      
 - bot_challenge
+- intro      
 - out_of_scope
 - agent_age
 - agent_annoying
@@ -103,7 +103,7 @@ responses:
 
   utter_cheer_up:
   - text: Here is something to cheer you up
-    image: "https://imgur.com/2wCHdzY" #"https://i.imgur.com/nGF1K8f.jpg"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
 
   utter_say_name:
   - text: Hi {name}!
@@ -154,10 +154,10 @@ responses:
   - text: Age is just a number. You're only as old as you feel.
 
   utter_agent_annoying:
-  - text: I'll do my best not to annoy you in the future.
-  - text: I'll try not to annoy you.
-  - text: I don't mean to. I'll ask my developers to make me less annoying.
-  - text: I didn't mean to. I'll do my best to stop that.
+  - text: I'll do my best to give you the best replies in the future.
+  - text: I'll trygive you the best replies.
+  - text: I don't mean to. I'll ask my developers to make me less annoying and give you the best replies.
+  
 
   utter_agent_answer_my_question:
   - text: Can you try asking it a different way?
@@ -246,11 +246,11 @@ responses:
   utter_ask_email:
     - text: Please type in your email address.
   utter_ask_frequency:
-    - text: How oftern do you want to receive emails regarding this.
+    - text: How often would you like to receive emails regarding this.
   utter_subscribed:
     - text: Thank you for subscribing to the newsletter, you will receive the same at {email}, Please wait and watch for that and you will receive emails {frequency}
   utter_posted_succesfullyto_mongodb:
-    - text: Subscription details posted to the MongoDB, please continue to explore while you wait for the newsletter.
+    - text: Disclosure-Subscription details posted to the MongoDB, please continue to explore while you wait for the newsletter.
 
 actions:
 - action_get_recent_matches

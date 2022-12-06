@@ -22,9 +22,10 @@ rules:
 
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
-  - intent: bot_challenge
+  - intent: agent_chatbot #bot_challenge
   - action: utter_iamabot
   - action: utter_bot_name
+  - action: utter_intro
 
 - rule: out-of-scope stuff
   steps:
@@ -41,5 +42,6 @@ rules:
    - intent: froze
    - action: utter_agent_bad
    - action: utter_restart
+
 
 

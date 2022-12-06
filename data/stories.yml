@@ -77,7 +77,21 @@ stories:
    steps:
    - intent: info_astronomy
    - action: action_info_astronomy
+   - action: utter_did_that_help
+   - intent: affirm
+   - action: utter_appraisal_thank_you
 
+-  story: info astronomy
+   steps:
+   - intent: info_astronomy
+   - action: action_info_astronomy
+   - action: utter_did_that_help
+   - intent: deny
+   - action: utter_please_rephrase
+   - intent: bad
+   - action: utter_agent_bad
+   - action: utter_agent_annoying
+ 
 
 - story:  info space
   steps:
@@ -211,14 +225,6 @@ stories:
   - intent: agent_busy
   - action: utter_agent_busy
 
-
-
-- story: path_agent_chatbot
-  steps:
-  - intent: agent_chatbot
-  - action: utter_agent_chatbot
-
-
 - story: path_agent_funny
   steps:
   - intent: agent_funny
@@ -297,8 +303,8 @@ stories:
 
 - story: greet and subscribe
   steps:
-  - intent: greet
-  - action: utter_greet
+  #- intent: greet
+  #- action: utter_greet
   - intent: subscribe
   - action: newsletter_form
   - active_loop: newsletter_form

@@ -68,12 +68,12 @@ nlu:
 
 - intent: out_of_scope
   examples: |
-    - give me a movie recomendation
+    - sing a song
+    - suggest me a movie 
+    - what is 0 divided by 0
     - book a flight
     - what's the weather
-    - what is 0 divided by 0
     - call google
-    - sing a song
 
 - intent: froze
   examples: |
@@ -252,9 +252,11 @@ nlu:
 - intent: intro
   examples: |
     - who are you?
+    - what can you do
     - introduce yourself
     - what is your name?
     - what do you do
+    
 - intent: confusion
   examples: |
     - what
@@ -369,6 +371,11 @@ nlu:
     - are you just a bot
     - are you a robot
     - you're a robot
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - I dont think you are a human.
 
 
 - intent: agent_funny
@@ -557,20 +564,6 @@ nlu:
     - what's going on in the world?
     - show me latest news
     - latest news
-    - can you tell me latest news
-    - what is trending in the world
-    - I want to know what is going on in the world
-    - Tell me latest news
-    - what's hot
-    - how's the world
-    - What's the news today
-    - Trending news
-    - World trending
-    - Top news
-    - tell me about the world
-    - I want to know latest news
-    - something new
-    - something about the world
     - News headlines
 
 - intent: subscribe
